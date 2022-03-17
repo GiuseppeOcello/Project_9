@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the 9th project in the Treehouse Front End Web Development course. Personal Web Development Portfolio by Giuseppe Ocello, Student at Treehouse.">
+    <!-- Linking to External fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400&display=swap" rel="stylesheet">
+    <!-- Linking to Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Personal Portfolio</title>
+</head>
+<body>
+    <header>
+
+        <nav>
+            <ul class="nav-links">
+                <li class="navigation">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-labelledby="about-icon" viewBox="0 0 18.75 25">
+                        <title id="about-icon">About</title>
+                        <path d="M 3.125,0 A 3.125,3.125 0 0 0 0,3.125 v 18.75 A 3.125,3.125 0 0 0 3.125,25 h 12.5 A 3.125,3.125 0 0 0 18.75,21.875 V 3.125 A 3.125,3.125 0 0 0 15.625,0 Z m 0,1.5625 h 12.5 a 1.5625,1.5625 0 0 1 1.5625,1.5625 v 16.804688 c 0,0 -1.5625,-2.742188 -7.8125,-2.742188 -6.25,0 -7.8125,2.742188 -7.8125,2.742188 V 3.125 A 1.5625,1.5625 0 0 1 3.125,1.5625 Z M 9.375,6.25 a 4.6875,4.6875 0 0 0 0,9.375 4.6875,4.6875 0 0 0 0,-9.375 z"/>
+                      </svg>
+                      About</a></li>
+                <li class="navigation">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-labelledby="portfolio-icon" viewBox="0 0 30.904963 24.999999">
+                      <title id="portfolio-icon">Portfolio</title>
+                      <path d="M 28.653369,3.522998 H 28.416293 C 28.143845,2.981303 27.611517,2.612539 27.000681,2.612539 H 22.654018 V 1.827537 C 22.654018,0.819847 21.893297,0 20.958193,0 H 9.9473329 C 9.0118762,0 8.2508024,0.819771 8.2508024,1.827537 V 2.612539 H 3.9042803 c -0.6108359,0 -1.1431639,0.368764 -1.4156114,0.910459 H 2.2515924 C 1.0100819,3.522998 0,4.611486 0,5.949367 v 16.624187 c 0,1.337957 1.0100819,2.426445 2.2515924,2.426445 H 28.653369 c 1.241511,0 2.251593,-1.088488 2.251593,-2.426445 V 5.949367 c 0,-1.337881 -1.010082,-2.426369 -2.251593,-2.426369 z M 9.2391393,1.827537 c 0,-0.420346 0.317702,-0.762405 0.7081231,-0.762405 H 20.958123 c 0.390067,0 0.707417,0.341983 0.707417,0.762405 V 2.612539 H 9.2391393 Z M 3.2837016,4.346421 c 0,-0.368764 0.2783779,-0.668751 0.6205787,-0.668751 H 27.00061 c 0.342201,0 0.62058,0.299987 0.62058,0.668751 v 12.648052 c 0,1.757771 -1.327079,3.187862 -2.958234,3.187862 h -5.836405 l 0.311842,-1.932148 h -7.372249 l 0.311843,1.932148 H 6.2420053 c -1.6311548,0 -2.9582331,-1.430091 -2.9582331,-3.187862 V 4.346421 Z M 17.963247,19.315394 17.58497,21.659291 h -4.265331 l -0.378278,-2.343897 z m 11.953307,3.25816 c 0,0.750613 -0.56664,1.361314 -1.263185,1.361314 H 2.2515924 c -0.6964744,0 -1.26318488,-0.610624 -1.26318488,-1.361314 V 5.949367 c 0,-0.750537 0.56663988,-1.361238 1.26318488,-1.361238 h 0.043772 v 12.406344 c 0,2.345115 1.7704497,4.252993 3.9466406,4.252993 H 12.2499 l 0.238346,1.47688 h 5.928045 l 0.238348,-1.47688 h 6.008317 c 2.176192,0 3.946641,-1.907878 3.946641,-4.252993 V 4.588129 h 0.04377 c 0.696475,0 1.263185,0.610625 1.263185,1.361238 z"/>
+                      </svg>
+                    Portfolio</a></li>
+                <li class="navigation">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-labelledby="contact-icon" viewBox="0 0 28.500502 25.000002">
+                      <title id="contact-icon">Contact</title>
+                      <path d="m 8.687678,0.8924362 h 18.090088 c 0.95076,0.001637 1.721096,0.7719729 1.722734,1.7227333 V 20.907681 c 3.92e-4,0.344928 -0.103307,0.681947 -0.297536,0.966992 -0.03641,0.09213 -0.09222,0.175337 -0.163645,0.243979 -0.04756,0.04556 -0.10173,0.08367 -0.16067,0.113064 -0.30862,0.258645 -0.698214,0.400794 -1.100883,0.401674 h -8.473329 c 0.265795,-0.392912 0.307891,-0.558687 0.285104,-1.324035 h 7.750847 l -9.176009,-9.637191 -3.028916,2.582613 v 0 c -0.244828,0.203729 -0.600174,0.203729 -0.845002,0 l -3.177684,-2.582613 v 0 l -2.15426,2.259154 c 0,0 -0.300582,-0.223178 -0.689339,-1.122569 L 9.083302,10.833113 6.893067,8.7822808 C 7.558534,8.4138664 7.378024,8.5851723 8.022112,8.2549849 L 13.698085,12.895037 26.227325,2.2194466 H 8.985214 Z M 5.193272,9.2234434 c 0.278252,1.5326596 0.751196,3.0234846 1.407345,4.4362616 0.774327,1.61383 1.823396,3.080714 3.100325,4.335099 0.09024,0.09435 0.217911,0.143454 0.348117,0.133891 0.209692,-0.02599 0.412041,-0.09378 0.595072,-0.199349 0.217453,-0.120153 0.426237,-0.255366 0.624825,-0.404649 0.934263,-0.648628 2.082752,-1.454951 3.061645,-0.550442 0.0238,0.02083 0.03571,0.04166 0.05951,0.05951 l 3.115201,3.430589 c 0.01084,0.01216 0.02078,0.02508 0.02975,0.03868 0.364631,0.495285 0.453136,1.141716 0.235053,1.716783 -0.243345,0.659258 -0.646084,1.248034 -1.172291,1.713807 -0.656134,0.588509 -1.484672,0.94956 -2.362436,1.029474 -0.822733,0.0753 -1.651953,0.03524 -2.463596,-0.119016 C 10.557484,24.63756 9.406456,24.156184 8.40666,23.436737 7.314397,22.628886 6.328676,21.686153 5.472955,20.630973 l -0.07141,-0.08629 C 4.949292,20.009122 4.461333,19.434878 4.006103,18.795176 2.2056398,16.214145 0.94376474,13.296754 0.29582954,10.217214 -0.21593236,7.6137738 -0.11179476,5.0133094 0.98908834,2.8621243 1.5841602,1.6719804 2.4946203,0.71986533 3.666912,0.27653674 4.690436,-0.11621074 5.901407,-0.12216146 7.276023,0.4639844 7.431246,0.5286916 7.543205,0.66752126 7.573559,0.832929 l 1.10981,4.9331464 C 8.893779,6.2560385 8.798382,6.8237662 8.439389,7.2180509 8.088001,7.5755724 7.647246,7.8324232 7.16296,7.9618909 6.996339,8.0332999 6.802941,8.095782 6.597641,8.16124 5.922235,8.3814166 5.190296,9.2472462 5.190296,9.2472462 v 0 z m 12.976779,1.5858666 9.003438,9.440817 V 3.1477589 l -9.003438,7.6704771 z"/>
+                    </svg>
+                    Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="title">
+    <span>&lt;</span>
+    <H1 class="name">Giuseppe Ocello</H1>
+    <span>&sol;&gt;</span>
+    </div>
+    <main>
+
+    <section class="accordion">
+        <h2 class="accordion-title">About</h2>
+        <div class="accordion-content expanded">
+            <p>I'm a Marine Engineer passionate about Structural, Mechanical and Aerospace Engineering with vast knowledge in Science and Engineering. With <strong>10 years of experience in Engineering</strong> fields, 7 of which in the Oil and Gas industry.</p>
+            <p>Expert in Heavy Lifting, Transportation and cargo securing engineering with over 300 thousand accident-free lifting operation and 150 thousand accident-free road transport, with a strong Safety and Quality mindset.</p>
+            <p>Autocad and Excel Guru fascinated by coding and app development.</p> 
+        </div>
+    </section>
+
+    <!-- <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+
+
+
+
+    <section class="accordion">
+        <h2 class="accordion-title">How I got into coding</h2>
+            <div class="accordion-content collapsed">
+                <p>It all started with the need for performing advance operations in <span>Excel</span> and dealing with large tables. There I discovered <span>VBA</span> and its potentiality.
+                After creating dozens of VBA projects and forms, I looked at a way to building small windows application using the same language and downloaded <span>Visual Studio</span>. I designed a few calculation's software that I then shared with my colleagues.</p>
+                <p>After a long time of non-coding, I got again fascinated, and I wanted to create my android application, so I began to look for video tutorials on <span>Java</span>, that is when I saw the first advert about <span>Treehouse</span> (about three years ago).
+                I started with the 25$ plan to begin learning <span>Java</span>, but it was a busy period form me, and I had to suspend after a few months.</p> 
+                <p>After some time I restarted, but I realize that building android applications would have taken some time, and since I had in mind to lunch my first web site I chosen to follow the tracks about web design, <span>HTML</span>, <span>CSS</span>, and the <span>lovely JavaSript</span>.
+                At the same period, a colleague of mine told me that I could have built a web site using <span>WordPress</span> without coding needed, and since I wanted to hurry up, I launched my consultancy site.</p>
+                <p>However, I wanted to offer engineering web apps, and since you do not code your site, I had to find a way to code on WordPress, which is not easy and the result is buggy.</p>
+                <p>Finally, I have chosen to start the website from scratch, and this is my ample opportunity to learn web development and Full-Stack following the current Techdegree.</p>
+                <p>It has been an unconstant path with many things forgotten along the way, but my target for 2021 is to no longer delay what I like.<p>
+                <p>No matter how good you are at something <strong>if you do not practice, you will forget</strong>.</p>
+            </div>
+      </section> 
+
+      <section class="accordion">
+        <h2 class="accordion-title">Objectives</h2>
+        <div class="accordion-content collapsed">
+            <p>I want to master JavaScript Full Stack Development and work with data servers. I'm interested in:</p>
+            <ul class="skills">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript &amp; SQL</li>
+            </ul>
+            <p>I’d like to create my web site from scratch and build web application for my website.</p>
+            <p>I’d like to learn how to work with HTML canvas to create and manipulate 3D models for engieering purpose.</p>
+            <p>Thess are <strong>my objectives</strong> for 2021</p>
+        </div>
+      </section>
+
+    </main>
+
+<!-- Link to Javascript files-->
+<script src="app.js"></script>
+</body>
+</html>
