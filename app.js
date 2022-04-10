@@ -79,29 +79,28 @@ let abbreviations = [
     'Hypertext Preprocessor'
 ];
 
+
 icons.forEach((icon, index) => {
     // create a tool tip
-    icon.addEventListener('mouseover', () => {
+    icon.addEventListener('mouseenter', () => {
 
-            if (icon.lastElementChild.classList == 'brand') {
-                let tip = document.createElement('span');
-                tip.textContent = abbreviations[index];
-                tip.classList.add('tooltip');
-                icon.appendChild(tip);
-
-            }
+        if (icon.lastElementChild.classList == 'brand') {
+            let tip = document.createElement('span');
+            tip.textContent = abbreviations[index];
+            tip.classList.add('tooltip');
+            icon.appendChild(tip);
+        }
         
     });
 
     // remove the span element of the tool tip create in the previous event
-    icon.addEventListener('mouseout', () => {
-        setTimeout(() => {
-            if (icon.lastElementChild.classList !== 'brand') {
-                let tip = document.querySelector('.tooltip');
-                icon.removeChild(tip);
-                }
-        }, 300);
+    icon.addEventListener('mouseleave', () => {
         
+        if (icon.lastElementChild.classList == 'tooltip') {
+            let tip = document.querySelector('.tooltip');
+            icon.removeChild(tip);
+        }
+
     });
 
 });
@@ -115,7 +114,6 @@ const siteThumb = document.querySelectorAll('img.project-preview');
 const card = document.querySelectorAll('.card');
 const modalContainer = document.querySelector(".modal-container");
 const overlay = document.querySelector(".overlay");
-const btnClose = document.querySelector(".btn-close");
 let vpWidth = document.documentElement.clientWidth;
 let btnSmall = '<button class="btn-small">See at 320px</button>';
 let btnMedium = '<button class="btn-medium">See at 768px</button>';
@@ -124,29 +122,29 @@ let currentProject;
 
 function populateModal(project) {
 
-        let siteHTML = card[project].children[0].outerHTML;
-        let titleHTML = card[project].children[2].outerHTML;
-        let btnHTML = card[project].children[6].children[1].outerHTML;
-        
-        modalContainer.innerHTML = `
-            ${titleHTML}
-            ${siteHTML}
-            ${btnHTML}
-        `;
+    let siteHTML = card[project].children[0].outerHTML;
+    let titleHTML = card[project].children[2].outerHTML;
+    let btnHTML = card[project].children[6].children[1].outerHTML;
+    
+    modalContainer.innerHTML = `
+        ${titleHTML}
+        ${siteHTML}
+        ${btnHTML}
+    `;
 
-        // adds buttons to preview the site at different width
-        if (vpWidth > 1024) {
-            modalContainer.innerHTML += `
-            ${btnSmall}
-            ${btnMedium}
-        `;
-        } else if (vpWidth > 768) {
-            modalContainer.innerHTML += `
-            ${btnSmall}
-        `;
-        }
+    // adds buttons to preview the site at different width
+    if (vpWidth > 1024) {
+        modalContainer.innerHTML += `
+        ${btnSmall}
+        ${btnMedium}
+    `;
+    } else if (vpWidth > 768) {
+        modalContainer.innerHTML += `
+        ${btnSmall}
+    `;
+    }
 
-        overlay.classList.remove('hidden');    
+    overlay.classList.remove('hidden');    
 }
 
 
@@ -185,6 +183,7 @@ siteThumb.forEach( (thumbnail, index) => {
 // === Modal Navigation === //
 const btnPrevious = document.querySelector(".btn-previous");
 const btnNext = document.querySelector(".btn-next");
+const btnClose = document.querySelector(".btn-close");
 const numberOfProjects = card.length - 1;
 
 document.addEventListener("keyup", (e) => {
@@ -197,23 +196,28 @@ document.addEventListener("keyup", (e) => {
  }
 });
 
+if (btnClose) {
 btnClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
     modalContainer.innerHTML = "";
     });
+}
 
+if (btnPrevious) {
 btnPrevious.addEventListener("click", () => {
     modalContainer.innerHTML = ""; 
     if (currentProject > 0) {
         currentProject += -1;
         populateModal(currentProject);
     } else if ( currentProject == 0) {
-        currentProject = numberOfProjects
+        currentProject = numberOfProjects;
         populateModal(currentProject);
     } 
  
 });
+}
 
+if (btnNext) {
 btnNext.addEventListener("click", () => {
     modalContainer.innerHTML = "";
     if (currentProject < numberOfProjects) {
@@ -225,3 +229,90 @@ btnNext.addEventListener("click", () => {
     }
    
 });
+}
+
+
+
+// ===========================================================================//
+// Functionalities for contact.html
+// ===========================================================================//
+let requiredField = document.querySelectorAll('[required]');
+let fieldPopulated;
+
+function formValidation() {
+   fieldPopulated = true;
+   requiredField.forEach( (field) => {
+      
+        if (field.value == "") {
+            unsuccessfullInput(field);
+        } else if (field.value !== "" && field.type !== "email") {
+            successfullInput(field);
+        } else if (field.value !== "" && field.type == "email") {
+            if (validateEmail(field)) {
+            successfullInput(field);
+            } else {
+            unsuccessfullInput(field);
+            alert('The Email format is invalid. Please check your email, it should look like this: sample@domain.com');
+            }
+        }
+   });
+}
+
+function clearFields() {
+   requiredField.forEach( (field) => {
+        field.value = '';
+        field.classList.remove('success');
+        field.classList.remove('warning');
+        field.placeholder = ' ';
+        field.nextElementSibling.style.cssText = '';
+   });
+}
+
+function successfullInput(field) {
+    field.classList.add('success');
+}
+
+function unsuccessfullInput(field) {
+    fieldPopulated = false;
+    field.classList.add('warning');
+    field.placeholder = 'This field cannot be empty';
+
+    if (field.tagName !== "TEXTAREA") {
+        field.nextElementSibling.style.cssText = 'bottom: 60px; font-size: 0.9em; color: white; background-color: #3a4664;';
+    } else {
+        field.nextElementSibling.style.cssText = 'bottom: 225px; font-size: 0.9em; color: white; background-color: #3a4664;';
+    }
+}
+
+function validateEmail(email) {
+    let emailFormat = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    if(emailFormat.test(email.value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+let btnSubmit = document.querySelector("#btn-submit");
+
+if (btnSubmit) {
+btnSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    formValidation();
+    if (fieldPopulated) {
+        sendEmail();
+        clearFields();
+    } else {
+        alert('Please verify that all the input fields have been filled in correctly');
+    }
+   
+});
+}
+
+function sendEmail() {
+    let firstName = document.querySelector("#first-name").value;
+    let lastName = document.querySelector("#last-name").value;
+    let subject = document.querySelector("#subject").value;
+    let query = document.querySelector("#query").value;
+    window.open(`mailto:giuseppe.ocello@hotmail.com?subject=${subject}&body=Hello%20I%20am%20${firstName}%20${lastName},%0D%0A%0D%0A%20I%20am%20contacting%20you%20for%20${query}`);
+}

@@ -7,8 +7,6 @@
    font-family: 'Titillium Web', sans-serif;
 }
 
-
-
 /* Variables */
 :root {
    --color-main: white;
@@ -25,8 +23,6 @@
    --transition-basic: all 0.3s ease-in-out;
 }
 
-
-
 /* === Tags elements === */
 html, 
 body {
@@ -39,9 +35,7 @@ body {
    width: 100%;
    position: absolute;
    background-image: linear-gradient(180deg, rgba(37,41,45,1) 0%, rgba(57,61,67,1) 85%, rgba(117,125,133,1) 100%); /* generated using https://cssgradient.io/*/
-   /* background-image: url("../img/bg_perspective_grid.jpg"); */
    background-attachment: fixed;
-   /* background-repeat: repeat; */
    background-size: 100%;
 }
 
@@ -228,7 +222,6 @@ ul.language-list {
     display: none;
 }
 
-
   /* ==== Portfolio Page ==== */
 
 main {
@@ -301,7 +294,6 @@ img {
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    /* padding-top: 10px; */
     
 }  
 button[class^="btn-"],
@@ -376,9 +368,7 @@ button.btn-medium {
     width: 80vw;
     height: 80vh;
     background-color: transparent;
-    /* border: 1px solid lightgrey; */
     border-radius: 15px;
-    /* padding: 10px; */
     margin-left: auto;
     margin-right: auto;
 
@@ -530,7 +520,6 @@ span.brace-opening {
 /* Contact form */
 
 form {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -543,9 +532,6 @@ form {
     grid-area: form;
     justify-self: center;
     align-self: center;
-    
-    /* display: flex;
-    justify-content: center; */
 }
 
 input, 
